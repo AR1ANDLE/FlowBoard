@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=DM+Sans:opsz@9..40&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
       rel="stylesheet"
     />
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
       @theme base {
         --font-sans: "Plus Jakarta Sans", sans-serif;
@@ -23,7 +23,7 @@
     <header
       class="w-full bg-[#F8FAFC] h-16 flex flex-col md:flex-row items-center justify-between px-4"
     >
-      <h1 class="text-[#1E293B] text-lg md:text-2xl font-bold font-sans">Kanban Board</h1>
+      <h1 class="text-[#1E293B] text-lg md:text-2xl font-bold font-sans">Flow Board</h1>
       <ul class="flex items-center justify-between h-full px-4  gap-2 md:gap-4">
         <li class="text-[#475569] w-6 h-6 cursor-pointer">
           <svg
@@ -92,5 +92,35 @@
         </li>
       </ul>
     </header>
+
+    <main>
+        <div class="filter-area bg-[#F1F5F9] w-full h-10 flex items-center justify-center gap-4 px-4 text-sans font-semibold text-[#475569]">
+            <select class="text-white border border-[#475569] flex items-center justify-center rounded-full bg-[#4F46E5] px-2 py-1 text-sm">
+                <option disabled selected hidden value="all">Priorité</option>
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
+            <select class="text-white border border-[#475569] flex items-center justify-center rounded-full bg-[#4F46E5] px-2 py-1 text-sm">
+                <option disabled selected hidden value="all">Statut</option>
+                <option value="todo">To Do</option>
+                <option value="inprogress">In Progress</option>
+                <option value="done">Done</option>
+            </select>
+            <select class="text-white border border-[#475569] flex items-center justify-center rounded-full bg-[#4F46E5] px-2 py-1 text-sm">
+                <option disabled selected hidden value="all">Date</option>
+                <option value="today">Today</option>
+                <option value="thisweek">This Week</option>
+                <option value="thismonth">This Month</option>
+            </select>
+            <div class="flex items-center justify-center gap-2 border border-[#475569] rounded-full px-2 py-1">
+                <input type="text" placeholder="Search Keywords..." class="bg-transparent border-none focus:outline-none" />
+                <svg class="text-[#475569] w-4 h-4" xmlns="http://w3.org" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+            </div>
+        </div>
+    </main>
+
   </body>
 </html>
